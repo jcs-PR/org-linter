@@ -1,10 +1,10 @@
-;;; org-linter.el --- Run org-lint on Org files  -*- lexical-binding: t; -*-
+;;; x-org-lint.el --- Run org-lint on Org files  -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2026  Shen, Jen-Chieh
 
 ;; Author: Shen, Jen-Chieh <jcs090218@gmail.com>
 ;; Maintainer: Shen, Jen-Chieh <jcs090218@gmail.com>
-;; URL: https://github.com/emacs-eine/org-linter
+;; URL: https://github.com/emacs-eine/x-org-lint
 ;; Version: 1.0.0
 ;; Package-Requires: ((emacs "26.1")
 ;;                    (commander "0.7.0")
@@ -37,7 +37,7 @@
 (require 'org-lint)
 (require 'ansi)
 
-(defun org-linter--print-error (file result)
+(defun x-org-lint--print-error (file result)
   "Print the error RESULT from FILE."
   (let* ((data (cl-second result))
          (filename (file-name-nondirectory file))
@@ -46,7 +46,7 @@
          (msg (concat filename ":" line ": " text)))
     (message "%s" msg)))
 
-(defun org-linter--file (file)
+(defun x-org-lint--file (file)
   "Run `org-lint' on FILE."
   (message "`%s` with org-lint" (ansi-green file))
   (with-temp-buffer
@@ -54,18 +54,18 @@
     (org-mode)
     (if-let* ((results (org-lint)))
         (mapc (lambda (result)
-                (org-linter--print-error file result))
+                (x-org-lint--print-error file result))
               results)
       (message (ansi-cyan "No issues found")))))
 
 ;;;###autoload
-(defun org-linter-run (&rest args)
+(defun x-org-lint-run (&rest args)
   "Run org-lint on ARGS."
   (message "")
   (if-let* ((files (mapcar #'expand-file-name args))
             (files (cl-remove-if-not #'file-exists-p files)))
-      (mapcar #'org-linter--file files)
+      (mapcar #'x-org-lint--file files)
     (message (ansi-cyan "(No file linted)"))))
 
-(provide 'org-linter)
-;;; org-linter.el ends here
+(provide 'x-org-lint)
+;;; x-org-lint.el ends here

@@ -5,7 +5,7 @@
 :;test -n "$EASK_EMACS" && EMACS=$EASK_EMACS
 :;exec "$EMACS" -batch -Q -l "$0" -- "$@"
 
-;;; org-linter --- Run org-lint on Org files  -*- lexical-binding: t; -*-
+;;; x-org-lint --- Run org-lint on Org files  -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2026  Shen, Jen-Chieh
 
@@ -34,24 +34,24 @@
 
 ;;; Code:
 
-(require 'org-linter)
+(require 'x-org-lint)
 (require 'commander)
 
-(defun org-linter--set-no-color ()
+(defun x-org-lint--set-no-color ()
   "Set option to no color."
   (setq ansi-inhibit-ansi t))
 
-(defun org-linter--run (&rest args)
+(defun x-org-lint--run (&rest args)
   "The program entry."
-  (apply #'org-linter-run args))
+  (apply #'x-org-lint-run args))
 
 (commander
- (name "org-linter")
+ (name "x-org-lint")
  (description "Run org-lint on Org files")
- (default org-linter--run)
+ (default x-org-lint--run)
  (option "--help, -h" "Show usage information and exit" commander-print-usage-and-exit)
 
  (option "--no-color"
-         org-linter--set-no-color))
+         x-org-lint--set-no-color))
 
-;;; org-linter ends here
+;;; x-org-lint ends here
