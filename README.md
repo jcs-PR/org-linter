@@ -1,15 +1,15 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-[![EINE Elpa](https://raw.githubusercontent.com/emacs-eine/badges/main/elpa/v/org-linter.svg)](https://emacs-eine.github.io/elpa/#/org-linter)
+[![EINE Elpa](https://raw.githubusercontent.com/emacs-eine/badges/main/elpa/v/x-org-lint.svg)](https://emacs-eine.github.io/elpa/#/x-org-lint)
 
-# org-linter
+# x-org-lint
 > Run org-lint on Org files
 
-[![CI](https://github.com/emacs-eine/org-linter/actions/workflows/test.yml/badge.svg)](https://github.com/emacs-eine/org-linter/actions/workflows/test.yml)
+[![CI](https://github.com/emacs-eine/x-org-lint/actions/workflows/test.yml/badge.svg)](https://github.com/emacs-eine/x-org-lint/actions/workflows/test.yml)
 
 Here is the basic usage of this tool:
 
 ```console
-USAGE: org-linter [COMMAND] [OPTIONS]
+USAGE: x-org-lint [COMMAND] [OPTIONS]
 
 Run org-lint on Org files
 
@@ -33,13 +33,13 @@ You need to add this line to your Eask file (global recommended).
 Then, install it:
 
 ```console
-eask install -g org-linter
+eask install -g x-org-lint
 ```
 
 ## 🔧 Usage
 
 ```console
-eask -g exec org-linter [FILES..] [OPTIONS..]
+eask -g exec x-org-lint [FILES..] [OPTIONS..]
 ```
 
 ## 🛠️ Contribute
@@ -64,13 +64,13 @@ To run the test locally, you will need the following tools:
 Link this package as a global dependency:
 
 ```sh
-eask -g link add org-linter </path/to/project/dir/>
+eask -g link add x-org-lint </path/to/project/dir/>
 ```
 
 Then execute the command:
 
 ```sh
-eask -g exec org-linter --help
+eask -g exec x-org-lint --help
 ```
 
 *📝 P.S. For more information, find the Eask manual at https://emacs-eask.github.io/.*
