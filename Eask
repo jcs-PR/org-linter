@@ -1,13 +1,13 @@
 ;; -*- mode: eask; lexical-binding: t -*-
 
-(package "org-linter"
+(package "x-org-lint"
          "1.0.0"
          "Run org-lint on Org files")
 
 (website-url "https://github.com/emacs-eine/org-linter")
 (keywords "convenience")
 
-(package-file "org-linter.el")
+(package-file "x-org-lint.el")
 (files "bin")
 
 (script "test" "echo \"Error: no test specified\" && exit 1")
