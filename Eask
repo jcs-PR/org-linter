@@ -4,7 +4,7 @@
          "1.0.0"
          "Run org-lint on Org files")
 
-(website-url "https://github.com/emacs-eine/org-linter")
+(website-url "https://github.com/emacs-eine/x-org-lint")
 (keywords "convenience")
 
 (package-file "x-org-lint.el")
